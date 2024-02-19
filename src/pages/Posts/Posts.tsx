@@ -1,16 +1,23 @@
-import React, {FC} from 'react';
+import React, {FC, useEffect} from 'react';
 
 import style from "./Posts.module.css";
-import Post from "../../components/Post/Post";
+import {useAppDispatch, useAppSelector} from "../../hooks/redux";
+import { fetchPosts } from '../../store/reducers/ActionCrators';
+
+
 const Posts:FC = () => {
+    const dispatch = useAppDispatch()
+    const {posts} = useAppSelector(state => state.posts)
+
+    useEffect(() => {
+        dispatch(fetchPosts())
+    }, [])
+
     return (
      <div className={style.wrapper}>
        <div className="container">
           <div className={style.list}>
-           <Post/>
-           <Post/>
-           <Post/>
-           <Post/>
+                {JSON.stringify(posts, null, 2)}
           </div>
        </div>
   </div>
