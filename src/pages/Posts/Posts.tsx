@@ -3,6 +3,7 @@ import React, {FC, useEffect} from 'react';
 import style from "./Posts.module.css";
 import {useAppDispatch, useAppSelector} from "../../hooks/redux";
 import { fetchPosts } from '../../store/reducers/ActionCrators';
+import Post from '../../components/Post/Post';
 
 
 const Posts:FC = () => {
@@ -17,7 +18,11 @@ const Posts:FC = () => {
      <div className={style.wrapper}>
        <div className="container">
           <div className={style.list}>
-                {JSON.stringify(posts, null, 2)}
+                {posts.map(post => <Post
+                    body={post.body}
+                    id={post.id}
+                    title={post.title}
+                />)}
           </div>
        </div>
   </div>
