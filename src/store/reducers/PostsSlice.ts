@@ -1,11 +1,12 @@
-import { IPost } from "../../models";
+import {IPost} from "../../models";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {fetchPosts} from "./ActionCrators";
 
 interface IPostsState {
     isLoading: boolean,
     posts: IPost[],
     error: string
-};
+}
 
 const initialState: IPostsState = {
     isLoading: false,
@@ -14,25 +15,9 @@ const initialState: IPostsState = {
 };
 
 export const postsSlice = createSlice({
-    initialState,
     name: "posts",
-    reducers: {
-        fetchPosts (state) {
-            state.isLoading = true
-        },
-        
-        fetchPostsSuccess (state, action: PayloadAction<IPost[]>) {
-            state.isLoading = true
-            state.posts = action.payload
-            state.error = ""
-        },
-        
-        fetchPostsError (state, action: PayloadAction<string>) {
-            state.isLoading = false
-            state.error = action.payload
-        }
-    }
+    initialState,
+    reducers: {},
 });
 
-export const {fetchPosts, fetchPostsSuccess, fetchPostsError} = postsSlice.actions;
 export default postsSlice.reducer;
