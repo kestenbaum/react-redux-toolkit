@@ -19,6 +19,7 @@ const Posts:FC = () => {
        <div className="container">
           <div className={style.list}>
                 {posts.map(post => <Post
+                    key={post.id}
                     body={post.body}
                     id={post.id}
                     title={post.title}
