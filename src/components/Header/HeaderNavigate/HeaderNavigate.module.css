@@ -1,0 +1,14 @@
+.nav {
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.link {
+    color: white;
+}
