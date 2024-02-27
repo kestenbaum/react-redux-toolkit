@@ -1,5 +1,6 @@
 import React from 'react';
 import {IPost} from "../../models";
+import Post from "../Post/Post";
 import {postsAPI} from "../../service/PostService";
 
 const PostContainer = () => {
@@ -7,7 +8,7 @@ const PostContainer = () => {
     return (
         <div>
             {isLoading && <h1>Loading...</h1>}
-            {posts && posts.map((post: IPost) => <div key={post.id}>{post.title}</div>)}
+            {posts && posts.map((post: IPost) => <Post key={post.id} {...post}/>) }
             {error && JSON.stringify(error)}
         </div>
     );
