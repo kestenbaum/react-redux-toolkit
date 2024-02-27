@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Header from './components/Header/Header';
-import Posts from "./pages/Posts/Posts";
+import AppRouter from "./pages/AppRouter";
 
 function App() {
     return (
         <>
             <Header/>
-            <Posts/>
+            <AppRouter/>
         </>
     );
 }
