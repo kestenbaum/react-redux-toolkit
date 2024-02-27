@@ -1,13 +1,13 @@
 import React, {FC} from 'react';
+import {HeaderLogo, HeaderNavigate} from "./index";
 
 import style from "./Header.module.css";
-import HeaderNavigate from "./HeaderNavigate/HeaderNavigate";
 const Header:FC = () => {
     return (
      <header className={style.header}>
         <div className="container">
             <div className={style.wrapper}>
-                Logo
+                <HeaderLogo children={"Logo"}/>
                 <HeaderNavigate/>
             </div>
         </div>
